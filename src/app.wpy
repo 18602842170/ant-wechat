@@ -1,0 +1,17 @@
+<style lang="less">
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+page{
+  font-family:PingFang SC,STHeitiSC-Light,Helvetica-Light,arial,sans-serif;
+  color: #666;
+}
+</style>
+
+<script src="./app.ts" lang="typescript">
+</script>

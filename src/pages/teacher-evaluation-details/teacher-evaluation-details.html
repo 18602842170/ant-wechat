@@ -1,0 +1,47 @@
+<view class="home-group">
+  <view class="evaluate-bd" wx:if="rollCall">
+
+    <view class="evaluate-lest1" wx:if="courseDetail">
+      <view class="evaluate-h1">
+        上课详情
+      </view>
+      <view class="evaluate-info1 ">
+        <view class="evaluate-info-left1 timetable-bady">
+          <view class="evaluate-info-time warp timetable-lest">
+            <image class="tm-icon" src="../../share/image/icon/banji.png"></image>
+            <view class="tm-name">名称：</view>
+            <view class="tm-text">{{courseDetail.name}}</view>
+          </view>
+          <view class="evaluate-info-name warp timetable-lest">
+            <image class="tm-icon" src="../../share/image/icon/xueyuan.png"></image>
+            <view class="tm-name warp">学员：</view>
+            <view class="tm-text warp">{{rollCall.userName}}</view>
+          </view>
+          <view class="evaluate-info-name warp timetable-lest">
+            <image class="tm-icon" src="../../share/image/icon/shijian.png"></image>
+            <view class="tm-name warp">时间：</view>
+            <view class="tm-text warp">{{courseDetail.startTime}} ~ {{courseDetail.endTime}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 列表 -->
+    <view class="evaluate-lest">
+      <view class="evaluate-h1">
+        <view class="warp">老师点评</view>
+      </view>
+
+      <view class="evaluate-lest-bd">
+
+        <view class="weui-cells weui-cells_after-title">
+          <view class="weui-cell">
+            <view class="weui-cell__bd">
+              <textarea class="weui-textarea" placeholder="请输入学员上课评价" value="{{rollCall.comment}}" bindblur="changeComment">
+
+              </textarea>
+            </view>
+            <button class="timetable-bady-button" bindtap="save">提交评价</button>
+          </view>
+        </view>
+      </view>

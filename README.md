@@ -1,2 +1,1 @@
-# ant-wechat
-小程序
+tsms-wechat

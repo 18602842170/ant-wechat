@@ -1,0 +1,37 @@
+<view class="home-group">
+
+  <!-- 顶部时间 -->
+  <view class="weui-cell__bd canlendarTopView">
+    <view class="centerView">
+      <view class="weui-input" wx:if="{{userType == '1'}}">学生</view>
+      <view class="weui-input" wx:if="{{userType == '2'}}">托管班</view>
+    </view>
+  </view>
+
+  <view class="evaluate-bd">
+    <!-- 列表 -->
+    <view class="evaluate-lest" bindtap="toClassShip" wx:for="{{students}}" wx:for-item="student" wx:key=""
+      data-student="{{student}}">
+      <view class="evaluate-h1">
+        {{student.studentNameInUser}}
+      </view>
+      <view class="evaluate-info">
+        <view class="evaluate-info-left">
+          <view class="evaluate-info-time evaluate-info-top  warp">
+            <image class="tm-icon" src="../../share/image/icon/shijian.png"></image>
+            <view class="warp">
+              {{student.depositStartDateString}} ~ {{student.depositEndDateString}}
+            </view>
+          </view>
+          <view class="evaluate-info-name warp">
+            <image class="tm-icon" src="../../share/image/icon/laoshi.png"></image>
+            <view class="warp">
+              教室：{{student.classRoomName}}
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- 列表 -->
+  </view>
+</view>

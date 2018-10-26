@@ -1,0 +1,45 @@
+// home-nav start
+.home-nav{
+    position:fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height:100rpx;
+    display: flex;
+    background-color: #fff;
+    &::before{
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        border-top: 2rpx solid #d5d5d5;
+        content: "";
+        transform: scaleY(.5);
+    }
+    .home-nav-item{
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        .text{
+        display:block;
+        font-size:24rpx;
+        margin-top:6rpx;
+        }
+    }
+    .home-nav-item.active{
+        color: #1e88f5;
+    }
+    .icon {
+        width:44rpx;
+        height:44rpx;   
+        // vertical-align: -.15rpx;
+        fill: currentColor;
+        overflow: hidden;
+    }
+    .home-icon{
+        background-image: url('../../share/image/home-icon-c.png');
+    }
+}

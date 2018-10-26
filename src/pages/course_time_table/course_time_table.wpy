@@ -1,0 +1,199 @@
+<style lang="less">
+.home-group {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
+  overflow-y: auto;
+  background-color: #efeff4;
+}
+// 选月
+.canlendarTopView {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20rpx 0;
+  width: 100%;
+  background-color: #fff;
+  font-size: 28rpx;
+  line-height: 28rpx;
+  .leftBgView {
+    .leftView {
+      padding: 12rpx 28rpx;
+      border-radius: 28rpx;
+      border: 2rpx solid #9cf;
+    }
+  }
+  .centerView {
+    margin: 0 28rpx;
+    padding: 12rpx 18rpx;
+    border-radius: 18rpx;
+    border: 2rpx solid #9cf;
+  }
+  .rightBgView {
+    .rightView {
+      padding: 12rpx 28rpx;
+      border-radius: 28rpx;
+      border: 2rpx solid #9cf;
+    }
+  }
+}
+// 周
+.weekBgView {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 20rpx 0 16rpx;
+  .weekView {
+    width: 98rpx;
+    line-height: 80rpx;
+    font-size: 32rpx;
+    text-align: center;
+    margin: 0 4rpx 4rpx 0;
+  }
+}
+// 日期
+.canlendarView {
+  margin: 0rpx 0 40rpx 0;
+}
+.dateBgView {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0rpx 20rpx 0 16rpx;
+  .dateView {
+    position: relative;
+    width: 98rpx;
+    height: 98rpx;
+    line-height: 98rpx;
+    font-size: 36rpx;
+    text-align: center;
+    margin: 0 4rpx 4rpx 0;
+    background-color: #fff;
+    .spot {
+      position: absolute;
+      top: 72rpx;
+      left: 50%;
+      width: 16rpx;
+      height: 16rpx;
+      background-color: #ffdf7f;
+      border-radius: 50%;
+      margin-left: -8rpx;
+    }
+  }
+  .datesView.dateSelectView {
+    background-color: #44a3f7;
+    color: #fff;
+    .spot {
+      // background-color: #55c7fe;
+      background-color: #ffdf7f;
+    }
+  }
+}
+
+// timetable-bady
+.timetable-bady {
+  margin: 0rpx 18rpx 40rpx;
+  padding: 50rpx 30rpx 0;
+  overflow: hidden;
+  background-color: #fff;
+  .timetable-lest {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 30rpx;
+    margin-bottom: 40rpx;
+    .tm-icon {
+      width: 28rpx;
+      height: 28rpx;
+      margin-right: 10rpx;
+    }
+    .tm-name {
+      color: #888;
+      // overflow: hidden;
+      // text-overflow: ellipsis;
+      white-space: nowrap;
+      font-size: 28rpx;
+    }
+    .tm-text {
+      color: #333;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+  .timetable-bady-button {
+    margin: 0 0 40rpx 0;
+    border-radius: 8rpx;
+    height: 80rpx;
+    font-size: 36rpx;
+    line-height: 80rpx;
+    text-align: center;
+    color: #fff;
+    background: #44a3f7;
+  }
+}
+
+// class  课堂点名
+.class {
+  margin: 0rpx 0rpx 40rpx;
+  padding: 30rpx 0 20rpx;
+  border: 2rpx solid #ddd;
+  border-width: 2rpx 0 2rpx 0;
+  .timetable-lest {
+    margin-bottom: 30rpx;
+    .tm-name {
+      color: #333;
+    }
+  }
+}
+.class-name {
+  display: flex;
+  flex-wrap: wrap;
+  .class-name-lest {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 20rpx 20rpx 0;
+    width: 206rpx;
+    height: 120rpx;
+    line-height: 120rpx;
+    text-align: center;
+    font-size: 32rpx;
+    color: #fff;
+    // border-radius: 16rpx;
+    border: 2rpx solid #9cf;
+    &:nth-child(3n) {
+      margin: 0 0px 40rpx 0;
+    }
+    .tm-icon {
+      width: 24rpx;
+      height: 24rpx;
+      background: #999;
+      margin-right: 12rpx;
+    }
+    .tm-icon.active {
+      background: #9cf;
+    }
+    .tm-name {
+      color: #888;
+    }
+  }
+}
+.datesView.datesView-no {
+  opacity: 0.4;
+}
+
+.dateView.dateView-no {
+  opacity: 0.4;
+}
+</style>
+<template src="./course_time_table.html">
+
+</template>
+
+<script src="./course_time_table.ts" lang="typescript">
+</script>
+
+

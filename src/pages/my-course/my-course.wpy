@@ -1,0 +1,144 @@
+<style lang="less">
+.home-group {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 100rpx;
+  left: 0;
+  z-index: 0;
+  overflow-y: auto;
+}
+// banner-wrap
+.banner-wrap {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-top: 350rpx;
+}
+.slider {
+  overflow: hidden;
+  .slider-group {
+    height: 100%;
+    overflow: hidden;
+    zoom: 1;
+    .slider-item {
+      float: left;
+      overflow: hidden;
+    }
+  }
+}
+.banner {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 350rpx;
+  .banner-item {
+    display: block;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: 50%;
+    background-size: cover;
+    background-color: #eef1f6;
+  }
+}
+
+// home-chip
+.home-chip {
+  margin: 56rpx 0 26rpx 0;
+}
+.home-chip-my {
+  .swiper {
+    position: relative;
+    overflow: hidden;
+    .swiper-group {
+      display: flex;
+    }
+  }
+  .website-menu {
+    background-color: #fff;
+    .menu-item {
+      width: 250rpx;
+      height: 220rpx;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      .item-icon {
+        width: 104rpx;
+        height: 104rpx;
+        margin-bottom: 16rpx;
+        border-radius: 104rpx;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        font-size: 10rpx;
+        .icon {
+          width: 100%;
+          width: 100%;
+          height: 104rpx;
+          background: #9cf;
+          border-radius: 50%;
+        }
+      }
+      .text {
+        max-width: 100%;
+        line-height: 40rpx;
+        font-size: 26rpx;
+        color: #333;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+    }
+  }
+}
+
+// home-nav start
+.home-nav {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100rpx;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border-top: 2rpx solid #d5d5d5;
+  .home-nav-item {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 4rpx;
+    .text {
+      display: block;
+      font-size: 24rpx;
+      margin-top: 4rpx;
+      color: #332c2b;
+    }
+  }
+  .home-nav-item.active {
+    .text {
+      // color: #1e88f5;
+      color: #ea5b31;
+    }
+  }
+  .icon {
+    width: 48rpx;
+    height: 38rpx;
+    fill: currentColor;
+    overflow: hidden;
+  }
+}
+</style>
+<template src="./my-course.html">
+
+</template>
+
+<script src="./my-course.ts" lang="typescript">
+</script>

@@ -1,0 +1,77 @@
+<view class="home-group">
+
+  <!-- banner-wrap -->
+  <view class="banner-wrap">
+    <!--顶部轮播图  -->
+    <swiper class="slider banner" indicator-dots="true" autoplay="true" interval='4000' indicator-active-color="#ffffff"
+      circular="false">
+      <swiper-item class="slider-group">
+        <image class="banner-item slider-item" src='../../share/image/dashbord1.png' style="width:750rpx;height:350rpx;"></image>
+      </swiper-item>
+      <swiper-item class="slider-group">
+        <image class="banner-item slider-item" src='../../share/image/dashbord2.png' style="width:750rpx;height:350rpx;"></image>
+      </swiper-item>
+      <swiper-item class="slider-group">
+        <image class="banner-item slider-item" src='../../share/image/dashbord3.png' style="width:750rpx;height:350rpx;"></image>
+      </swiper-item>
+    </swiper>
+  </view>
+
+  <!-- home-chip -->
+  <view class="home-chip home-chip-my">
+    <view class="swiper menu-slider-box">
+      <view class="website-menu swiper-group">
+
+        <view class="menu-item swiper-item-1" @tap="toCourseTimeTable">
+          <view class="item-icon">
+            <image class="icon" src="../../share/image/ckkb.png"></image>
+          </view>
+          <span class="text">查看课表</span>
+        </view>
+
+        <view class="menu-item swiper-item-1" @tap="toCourseEvaluate">
+          <view class="item-icon">
+            <image class="icon" src="../../share/image/ktpj.png"></image>
+          </view>
+          <span class="text">课堂评价</span>
+        </view>
+
+        <view class="menu-item swiper-item-1" @tap="toNotice">
+          <view class="item-icon">
+            <image class="icon" src="../../share/image/tzgg.png"></image>
+          </view>
+          <span class="text">通知公告</span>
+        </view>
+
+        <view class="menu-item swiper-item-1" @tap="toTrustList">
+          <view class="item-icon">
+            <image class="icon" src="../../share/image/xytg.png"></image>
+          </view>
+          <span class="text">托管课程</span>
+        </view>
+
+      </view>
+    </view>
+  </view>
+
+</view>
+
+<!-- 标签栏 -->
+<view class="home-nav">
+  <view class="home-nav-item" bindtap="Dashboar">
+    <image class="icon" src="../../share/image/bar/shouye.png"></image>
+    <span class="text">首页</span>
+  </view>
+  <view class="home-nav-item" bindtap="ElectiveCourses">
+    <image class="icon" src="../../share/image/bar/yuyue.png"></image>
+    <span class="text">选课预约</span>
+  </view>
+  <view class="home-nav-item active" bindtap="MyCourse">
+    <image class="icon" src="../../share/image/bar/kecheng-v.png"></image>
+    <span class="text">我的课程</span>
+  </view>
+  <view class="home-nav-item" bindtap="PersonalInfo">
+    <image class="icon" src="../../share/image/bar/wode.png"></image>
+    <span class="text">个人信息</span>
+  </view>
+</view>

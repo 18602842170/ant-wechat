@@ -1,0 +1,13 @@
+<view class="banner">
+  <image class="image" src=""></image>
+</view>
+<view class="text">
+  <view class="text-hb">
+    微信信息授权：
+  </view>
+  <view class="text-bd">
+    是否同意授权 培训管理系统 使用您的微信头像等信息？
+  </view>
+</view>
+<button class="btn" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="getUserInfo">微信授权</button>
+<button class="btn" @tap="cencl">取消</button>

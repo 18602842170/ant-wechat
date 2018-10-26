@@ -1,0 +1,105 @@
+<view class="home-group">
+  <!-- banner-wrap -->
+  <view class="banner-wrap">
+    <view class="slider banner">
+      <view class="slider-group">
+        <image class="banner-item slider-item" src="{{course.backImageUrl}}" style="width:750rpx;"></image>
+      </view>
+    </view>
+  </view>
+
+  <view class="weui-tab">
+
+    <view class="weui-tab__panel">
+
+      <!-- 详情 -->
+      <view class="weui-tab__content">
+        <view class="basic-info-list">
+          <!-- 简介 -->
+          <view class="basic-info-list__item title-bar">
+            <view class="title-bar__title">{{course.name}}</view>
+            <!-- <view class="title-bar__info ">
+              <view class="title-bar__info-static z-free">
+                <span class="title-bar__info-item u-message">最近预约<em>{{course.courseReserveCount}}</em>人</span>
+              </view>
+              <view class="title-bar__label">
+                <view class="title-bar__label-inner">
+                  <view class="label-list"> <span class="label-item">{{course.courseDetailCount}}课程</span> </view>
+                </view>
+                <view class="title-bar__info-price">
+                  <span class="title-bar__info-item u-price">¥{{course.price}}</span>
+                </view>
+              </view>
+            </view> -->
+            <view class="title-bar__info ">
+              <view class="title-bar__label">
+                <view class="title-bar__label-inner">
+                  <view class="label-list">
+                    <span class="title-bar__info-item u-message">预约人数：<em>{{course.courseReserveCount}}</em>人</span>
+                  </view>
+                </view>
+                <view class="title-bar__info-price">
+                  <span class="title-bar__info-item u-price">￥{{course.price}}.00</span>
+                  <span class="label-item">{{course.courseDetailCount}}课时</span>
+                </view>
+              </view>
+            </view>
+
+          </view>
+
+          <!--  老师介绍 -->
+          <view class="teacher-intr">
+            <view class="teacher-intr-title">
+              老师介绍
+              <!-- <span class="title-static">(1)</span> -->
+            </view>
+
+            <!-- 老师一 -->
+            <view class="teacher-intr-link">
+              <view class="teacher-intr-img" aria-label="teacher face">
+                <image class="image" src="../../share/image/icon1.png"></image>
+              </view>
+              <view class="teacher-intr-text">
+                <view class="teacher-intr-name"><span class="t-name" aria-label="teacher name">{{teacher.teacherName}}</span>
+                  <span class="t-grade u-price">{{teacher.teacherLevelStr}}</span></view>
+                <view class="teacher-intr-info" aria-label="teacher desc">{{teacher.teacherProfile}}</view>
+              </view>
+            </view>
+
+          </view>
+
+
+        </view>
+      </view>
+
+    </view>
+
+
+  </view>
+</view>
+<view class="bottom bottom-fixed">
+  <view class="bottom__btn">
+    <button class="course-action apply" bindtap="toOrder">立即预约</button>
+  </view>
+</view>
+
+
+
+<!-- 测试 -->
+<!-- <view class="home-group"> -->
+<!-- banner-wrap -->
+<!-- <view class="banner-wrap">
+    <view class="slider banner">
+      <view class="slider-group">
+        <image class="banner-item slider-item" src="../../share/image/356.jpg" style="width: 750rpx;"></image>
+      </view>
+    </view>
+  </view>
+  <form report-submit='true' bindsubmit="formSubmit" style="z-index:1000000">
+    <label>姓名</label>
+    <input name="name" />
+    <button style="height:60rpx" form-type='submit' type="primary" data-name='预约'>
+      预约
+    </button>
+  </form>
+</view> -->

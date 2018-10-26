@@ -1,0 +1,101 @@
+<view class="home-group">
+
+  <!-- banner-wrap -->
+  <view class="banner-wrap">
+    <!--顶部轮播图  -->
+    <swiper class="slider banner" indicator-dots="true" autoplay="true" interval='4000' indicator-active-color="#ffffff"
+      circular="false">
+      <swiper-item class="slider-group">
+        <image class="banner-item slider-item" src='../../share/image/dashbord1.png' style="width:750rpx;height:350rpx;"></image>
+      </swiper-item>
+      <swiper-item class="slider-group">
+        <image class="banner-item slider-item" src='../../share/image/dashbord2.png' style="width:750rpx;height:350rpx;"></image>
+      </swiper-item>
+      <swiper-item class="slider-group">
+        <image class="banner-item slider-item" src='../../share/image/dashbord3.png' style="width:750rpx;height:350rpx;"></image>
+      </swiper-item>
+    </swiper>
+  </view>
+
+  <view class="home-chip home-chip-dash">
+    <view class="common-title">
+      <image class="common-title-h" src="../../share/img/jingxuan.png"></image>
+      <image class="common-title-d" src="../../share/img/yingwen.png"></image>
+    </view>
+    <view class="center__course-list">
+
+      <block wx:for="{{courses}}" wx:for-item="course" wx:key="id">
+        <view class="common__course-item" bindtap="CourseDetails">
+          <view class="common__course-link" data-course="{{course}}">
+            <view class="common__course-cover-wrap">
+              <image class="common__course-cover" data-course="{{course}}" src="{{course.backImageUrl}}"></image>
+            </view>
+
+            <view class="common-course-title">
+              <image class="jingxuan" src="../../share/icon/i-jingxuan.png"></image>
+              <view class="course-title" data-course="{{course}}">{{course.name}}</view>
+            </view>
+
+            <view class="common__course-price">
+              <view class="course-price" data-course="{{course}}">¥ {{course.price}}.00</view>
+              <span class="common__course-pkg" data-course=" {{course}}">{{course.courseDetailCount}}课时</span>
+            </view>
+          </view>
+        </view>
+      </block>
+
+    </view>
+  </view>
+
+  <view class="contact">
+    <view class="contact-logo1">
+      <image class="contact-logo1-img" src="../../share/img/logo1.png"></image>
+    </view>
+    <view class="contact-body">
+      <image class="weixing" src="../../share/img/wechat.png"></image>
+      <view class="contact-info">
+        <view class="contact-info-title">
+          Contact us 多喜教育
+        </view>
+        <view class="contact-info-nbr">
+          <view class="nbr">
+            19934406898
+          </view>
+          <view class="nbr">
+            19934405898
+          </view>
+          <view class="nbr">
+            19934405898
+          </view>
+        </view>
+        <view class="contact-info-area1">
+          锦江区华润路187号东湖国际商业二楼
+        </view>
+        <view class="contact-info-area2">
+          （东湖国际东北2门旁）
+        </view>
+      </view>
+    </view>
+  </view>
+
+</view>
+
+<!-- 标签栏 -->
+<view class="home-nav">
+  <view class="home-nav-item active">
+    <image class="icon" src="../../share/image/bar/shouye-v.png"></image>
+    <span class="text">首页</span>
+  </view>
+  <view class="home-nav-item" bindtap="ElectiveCourses">
+    <image class="icon" src="../../share/image/bar/yuyue.png"></image>
+    <span class="text">选课预约</span>
+  </view>
+  <view class="home-nav-item" bindtap="MyCourse">
+    <image class="icon" src="../../share/image/bar/kecheng.png"></image>
+    <span class="text">我的课程</span>
+  </view>
+  <view class="home-nav-item" bindtap="PersonalInfo">
+    <image class="icon" src="../../share/image/bar/wode.png"></image>
+    <span class="text">个人信息</span>
+  </view>
+</view>

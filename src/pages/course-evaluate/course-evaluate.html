@@ -1,0 +1,36 @@
+<view class="home-group">
+
+  <!-- 顶部时间 -->
+  <view class="weui-cell__bd canlendarTopView">
+    <picker class="centerView" mode="date" value="{{date}}" @change="bindDateChange">
+      <view class="weui-input">{{date}}</view>
+    </picker>
+  </view>
+
+  <view class="evaluate-bd">
+    <!-- 列表 -->
+    <view class="evaluate-lest" bindtap="toCourseEvaluate" wx:for="{{todayCourses}}" wx:for-item="course" wx:key=""
+      data-course="{{course}}">
+      <view class="evaluate-h1">
+        {{course.name}}
+      </view>
+      <view class="evaluate-info">
+        <view class="evaluate-info-left">
+          <view class="evaluate-info-time evaluate-info-top  warp">
+            <image class="tm-icon" src="../../share/image/icon/shijian.png"></image>
+            <view class="warp">
+              {{course.startTime}} ~ {{course.endTime}}
+            </view>
+          </view>
+          <view class="evaluate-info-name warp">
+            <image class="tm-icon" src="../../share/image/icon/laoshi.png"></image>
+            <view class="warp">
+              老师：{{course.techerName}}
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- 列表 -->
+  </view>
+</view>

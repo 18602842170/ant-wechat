@@ -1,0 +1,152 @@
+<style lang="less">
+// weui-mav
+.weui-tab {
+  position: relative;
+  height: 100%;
+  font-size: 32rpx;
+}
+.weui-navbar {
+  display: flex;
+  position: absolute;
+  z-index: 500;
+  top: 0;
+  width: 100%;
+  border-bottom: 1rpx solid #cccccc;
+  .weui-navbar__item {
+    position: relative;
+    display: block;
+    flex: 1;
+    padding: 26rpx 0;
+    text-align: center;
+    font-size: 0;
+  }
+  .weui-navbar__title {
+    display: inline-block;
+    font-size: 32rpx;
+    // max-width: 8em;
+    width: auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-wrap: normal;
+  }
+  .weui-navbar__slider {
+    position: absolute;
+    content: ' ';
+    left: 0;
+    bottom: 0;
+    width: 50%;
+    height: 4rpx;
+    background-color: #1aad19;
+    transition: transform 0.3s;
+  }
+}
+// weui-tab__panel
+.weui-tab__panel {
+  box-sizing: border-box;
+  height: 100%;
+  padding-top: 100rpx;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  .weui-tab__content {
+    // padding-top:60px;
+    text-align: center;
+    // background: #efeff4;
+  }
+}
+
+// login
+.form {
+  margin: 40rpx 30rpx 0;
+  padding: 40rpx 36rpx 80rpx;
+  background-color: #fff;
+  box-shadow: 0 0 4rpx 0 rgba(0, 38, 78, 0.2);
+}
+.form .form-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  padding: 14rpx 0;
+  border-radius: 8r4px;
+  margin-bottom: 40rpx;
+  background-color: #f5f5f5;
+}
+.form .form-item .form-item-bd {
+  position: relative;
+  height: 72rpx;
+  line-height: 72rpx;
+  flex: 1;
+}
+.form .form-item .form-item-bd input {
+  padding-left: 80rpx;
+  font-size: 16px;
+  color: #474747 !important;
+  background-color: #f5f5f5 !important;
+  text-align: left;
+}
+.icon {
+  position: absolute;
+  left: 24rpx;
+  top: 18rpx;
+  width: 40rpx;
+  height: 40rpx;
+  line-height: 72rpx;
+  font-size: 32rpx;
+  overflow: hidden;
+}
+.form-btn {
+  height: 98rpx;
+  color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  border-radius: 68rpx;
+  font-size: 32rpx;
+  background-color: #b2b2b2;
+}
+.form-btn.active {
+  background-color: #44a3f7;
+}
+.form-btn.tab-btn {
+  margin: 0 66rpx;
+  background-color: rgba(68, 163, 247, 0.5);
+}
+input[type='number'],
+input[type='password'],
+input[type='search'],
+input[type='tel'],
+input[type='text'],
+textarea {
+  width: 100%;
+  padding: 0 20rpx;
+  height: inherit;
+  border: none;
+  box-sizing: border-box;
+  outline: none;
+}
+.title {
+  font-size: 32rpx;
+  text-align: center;
+  line-height: 32rpx;
+}
+.form-line {
+  margin: 40rpx 0 28rpx 0;
+}
+</style>
+<template src="./login.html">
+
+</template>
+
+<script src="./login.ts" lang="typescript">
+</script>

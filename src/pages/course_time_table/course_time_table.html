@@ -1,0 +1,115 @@
+<view class="home-group">
+  <view class="canlendarBgView">
+    <view class="canlendarView">
+      <view class="canlendarTopView">
+        <view class="leftBgView" bindtap="handleCalendar" data-handle="prev">
+          <view class="leftView">上月</view>
+        </view>
+        <view class="centerView">{{cur_year || "--"}} 年 {{cur_month || "--"}} 月</view>
+        <view class="rightBgView" bindtap="handleCalendar" data-handle="next">
+          <view class="rightView">下月</view>
+        </view>
+      </view>
+      <view class="weekBgView">
+        <view class="weekView" wx:for="{{weeks_ch}}" wx:key="{{index}}" data-idx="{{index}}">{{item}}</view>
+      </view>
+      <view class="dateBgView">
+        <view wx:if="{{hasEmptyGrid}}" class="dateView dateView-no" wx:for="{{empytGrids}}" wx:key="{{index}}" data-idx="{{index}}">
+          <view class="datesView">
+          </view>
+        </view>
+        <view class="dateView" wx:for="{{days}}" wx:key="{{index}}" data-idx="{{index}}" bindtap="dateSelectAction">
+          <view class="datesView {{index == todayIndex ? 'dateSelectView' : ''}}">
+            {{item.day}}
+            <view wx:if="{{item.courseDetails.length}}" class="spot"></view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <block wx:if="{{userType == '2'}}">
+    <!-- 学生 -->
+    <view class="timetable-bady" wx:for="{{todayCourses}}" wx:for-item="course" wx:key="">
+      <!-- li -->
+      <view class="timetable-lest">
+        <image class="tm-icon" src="../../share/image/icon/banji.png"></image>
+        <view class="tm-name">名称：</view>
+        <view class="tm-text">{{course.name}}</view>
+      </view>
+      <!-- li -->
+      <view class="timetable-lest">
+        <image class="tm-icon" src="../../share/image/icon/shijian.png"></image>
+        <view class="tm-name">时间：</view>
+        <view class="tm-text">{{course.startTime}}~{{course.endTime}}</view>
+      </view>
+      <!-- li -->
+      <view class="timetable-lest">
+        <image class="tm-icon" src="../../share/image/icon/jiaoshi.png"></image>
+        <view class="tm-name">教室：</view>
+        <view class="tm-text">大教室</view>
+      </view>
+      <!-- li -->
+      <view class="timetable-lest">
+        <image class="tm-icon" src="../../share/image/icon/laoshi.png"></image>
+        <view class="tm-name">老师：</view>
+        <view class="tm-text">
+          <block wx:for="{{course.userList}}" wx:for-item="user" wx:key="">
+            {{user.nikeName}}
+          </block>
+        </view>
+      </view>
+      <!-- li -->
+      <view class="timetable-lest">
+        <image class="tm-icon" src="../../share/image/icon/zhuangtai.png"></image>
+        <view class="tm-name">状态：</view>
+        <view class="tm-text">{{course.status}}</view>
+      </view>
+    </view>
+  </block>
+
+
+  <block wx:if="{{userType == '1'}}">
+    <!-- 老师 -->
+    <view class="timetable-bady" class="timetable-bady" wx:for="{{todayCourses}}" wx:for-item="course" wx:key="">
+      <!-- li -->
+      <view class="timetable-lest">
+        <image class="tm-icon" src="../../share/image/icon/banji.png"></image>
+        <view class="tm-name">名称：</view>
+        <view class="tm-text">{{course.name}}</view>
+      </view>
+      <!-- li -->
+      <view class="timetable-lest">
+        <image class="tm-icon" src="../../share/image/icon/shijian.png"></image>
+        <view class="tm-name">时间：</view>
+        <view class="tm-text">{{course.startTime}}~{{course.endTime}}</view>
+      </view>
+      <!-- li -->
+      <view class="timetable-lest">
+        <image class="tm-icon" src="../../share/image/icon/renshu.png"></image>
+        <view class="tm-name">人数：</view>
+        <view class="tm-text">{{course.userList.length}}人</view>
+      </view>
+      <button wx:if="{{!course.showFlag}}" class="timetable-bady-button" data-idx="{{index}}" @tap="changeShowFlag">课堂点名</button>
+
+      <!-- 点名列表 -->
+      <checkbox-group wx:if="{{course.showFlag}}" data-courseIndex="{{index}}" bindchange="checkboxChange">
+        <view class="class">
+          <view class="timetable-lest">
+            <!-- <image class="tm-icon" src=""></image> -->
+            <view class="tm-name">学员点名：</view>
+          </view>
+          <view class="class-name">
+            <label class="class-name-lest checkbox" wx:for="{{course.userList}}" wx:for-item="user" wx:key="">
+              <checkbox style="zoom:80%; margin-top:-8rpx;" value="{{index}}" checked="{{user.checked}}" color="#44a3f7" />
+              <view class="tm-name">{{user.nikeName}}</view>
+            </label>
+          </view>
+        </view>
+      </checkbox-group>
+
+      <button wx:if="{{course.showFlag}}" class="timetable-bady-button" data-idx="{{index}}" bindtap="saveRollCall()">保存</button>
+    </view>
+
+  </block>
+</view>

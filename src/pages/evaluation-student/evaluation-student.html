@@ -1,0 +1,34 @@
+<view class="home-group">
+
+  <!-- 顶部时间 -->
+  <view class="weui-cell__bd  evaluation" wx:if="courseDetail">
+    <view class="evaluation-h">
+      {{courseDetail.name}}
+    </view>
+    <view class="evaluation-time">
+      {{courseDetail.startTime}} ~ {{courseDetail.endTime}}
+    </view>
+  </view>
+
+  <view class="evaluate-bd">
+    <!-- 列表 -->
+    <view class="evaluate-lest" wx:for="" wx:for="{{students}}" wx:for-item="student" wx:key="" data-student="{{student}}"
+      bindtap="toTeacherEvaluationDetailse">
+      <view class="evaluate-info">
+        <view class="evaluate-info-left">
+          <view class="evaluate-info-time evaluate-info-top  warp">
+            <image class="tm-icon" src="../../share/image/icon/xueyuan.png"></image>
+            {{student.userName}}
+          </view>
+        </view>
+        <view class="evaluate-info-right">
+          <view class="evaluate-info-time evaluate-info-top warp fxed">
+            点评状态：
+            <view wx:if="{{student.comment}}" class="fxed green">已点评</view>
+            <view wx:if="{{!student.comment}}" class="fxed">未点评</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

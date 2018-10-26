@@ -1,0 +1,109 @@
+<view class="home-group">
+  <view class="canlendarBgView">
+    <view class="canlendarView">
+      <view class="canlendarTopView">
+        <view class="leftBgView" bindtap="handleCalendar" data-handle="prev">
+          <view class="leftView">上月</view>
+        </view>
+        <view class="centerView">{{cur_year || "--"}} 年 {{cur_month || "--"}} 月</view>
+        <view class="rightBgView" bindtap="handleCalendar" data-handle="next">
+          <view class="rightView">下月</view>
+        </view>
+      </view>
+      <view class="weekBgView">
+        <view class="weekView" wx:for="{{weeks_ch}}" wx:key="{{index}}" data-idx="{{index}}">{{item}}</view>
+      </view>
+      <view class="dateBgView">
+        <view wx:if="{{hasEmptyGrid}}" class="dateView dateView-no" wx:for="{{empytGrids}}" wx:key="{{index}}" data-idx="{{index}}">
+          <view class="datesView">
+          </view>
+        </view>
+        <view class="dateView" wx:for="{{days}}" wx:key="{{index}}" data-idx="{{index}}" bindtap="dateSelectAction">
+          <view class="datesView {{index == todayIndex ? 'dateSelectView' : ''}}">
+            {{item.day}}
+            <view wx:if="{{item.hasClassFlag}}" class="spot"></view>
+          </view>
+        </view>
+      </view>
+
+    </view>
+  </view>
+
+  <block wx:if="{{days[todayIndex].hasClassFlag}}">
+    <!-- 学生 -->
+    <view class="timetable-bady" wx:if="{{userType == '2'}}">
+      <!-- li -->
+      <view class="timetable-lest">
+        <view class="tm-name">A、学校作业：</view>
+        <input class="weui-input" value="{{todayStudentScore.scoresA}}" disabled="true" placeholder="未打分" />
+      </view>
+      <!-- li -->
+      <view class="timetable-lest">
+        <view class="tm-name">B、朗诵背诵：</view>
+        <input class="weui-input" value="{{todayStudentScore.scoresB}}" disabled="true" placeholder="未打分" />
+      </view>
+      <!-- li -->
+      <view class="timetable-lest">
+        <view class="tm-name">C、数感训练：</view>
+        <input class="weui-input" value="{{todayStudentScore.scoresC}}" disabled="true" placeholder="未打分" />
+      </view>
+      <view class="timetable-lest big">
+        <view class="tm-name">合计：</view>
+        <view class="tm-text"><span>{{todayStudentScore.allScores}}</span>颗星星</view>
+      </view>
+    </view>
+
+    <!-- 老师 -->
+    <view class="timetable-bady " wx:if="{{userType == '1' && !editFlag}}">
+      <!-- li -->
+      <view class="timetable-lest">
+        <view class="tm-name">A、学校作业：</view>
+        <input class="weui-input" value="{{todayStudentScore.scoresA}}" disabled="true" placeholder="未打分" />
+      </view>
+      <!-- li -->
+      <view class="timetable-lest">
+        <view class="tm-name">B、朗诵背诵：</view>
+        <input class="weui-input" value="{{todayStudentScore.scoresB}}" disabled="true" placeholder="未打分" />
+      </view>
+      <!-- li -->
+      <view class="timetable-lest">
+        <view class="tm-name">C、数感训练：</view>
+        <input class="weui-input" value="{{todayStudentScore.scoresC}}" disabled="true" placeholder="未打分" />
+      </view>
+      <view class="timetable-lest big">
+        <view class="tm-name">合计：</view>
+        <view class="tm-text"><span>{{todayStudentScore.allScores}}</span>颗星星</view>
+      </view>
+      <button class="timetable-bady-button" bindtap="showEdit">打分</button>
+    </view>
+
+    <!-- 老师 -->
+    <view class="timetable-bady ship" wx:if="{{userType == '1' && editFlag}}">
+      <!-- li -->
+      <view class="timetable-lest">
+        <view class="tm-name">A、学校作业：</view>
+        <input class="weui-input" type="number" placeholder="请打分" value="{{todayStudentScore.scoresA}}" bindblur="inputA" />
+      </view>
+      <!-- li -->
+      <view class="timetable-lest">
+        <view class="tm-name">B、朗诵背诵：</view>
+        <input class="weui-input" type="number" placeholder="请打分" value="{{todayStudentScore.scoresB}}" bindblur="inputB" />
+      </view>
+      <!-- li -->
+      <view class="timetable-lest">
+        <view class="tm-name">C、数感训练：</view>
+        <input class="weui-input" type="number" placeholder="请打分" value="{{todayStudentScore.scoresC}}" bindblur="inputC" />
+      </view>
+      <view class="timetable-lest big">
+        <view class="tm-name">合计：</view>
+        <view class="tm-text"><span>{{todayStudentScore.allScores}}</span>颗星星</view>
+      </view>
+
+      <button class="timetable-bady-button" bindtap="saveDepositScores">保存</button>
+    </view>
+
+
+  </block>
+  <view class="timetable-bady ship-text">
+    备注：1、A为校内作业；2、B、C为校外作业；3、提醒或修改超3次不给星星；
+  </view>

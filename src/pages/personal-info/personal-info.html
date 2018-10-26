@@ -1,0 +1,82 @@
+<view class="home-group">
+  <view class="weui-panel weui-panel_access km-ps-info">
+
+    <view class="weui-panel__bd">
+      <view class="weui-media-box weui-media-box_appmsg" style="padding: 20px;">
+        <view class="weui-media-box__hd km-ps-info-img">
+          <image class="weui-media-box__thumb" src="{{userInfo.imag}}"></image>
+        </view>
+        <view class="weui-media-box__bd">
+          <view class="weui-media-box__desc">姓名：
+            <span>{{userInfo.name}}</span>
+          </view>
+          <view class="weui-media-box__desc">性别：
+            <span>{{userInfo.sex}}</span>
+          </view>
+          <view class="weui-media-box__desc">电话：
+            <span>{{userInfo.phoneNumber}}</span>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 列表 -->
+    <view class="personal_mian course-list list-view" wx:if="{{userType == '2'}}">
+
+      <view class="personal_mian-title">报名课程</view>
+
+      <view class="list-view__item">
+
+        <view class="table">
+
+          <view class="course_tb th">
+            <view class="course_mian">
+              <view class="course_name2 ">
+                <view class="course_title">课程名称</view>
+                <view class="course_name1">时段</view>
+                <view class="course_name1">总课次</view>
+                <view class="course_name1">已上课次</view>
+                <view class="course_name1">剩余课次</view>
+              </view>
+            </view>
+          </view>
+
+          <view class="course_tb tr">
+            <view class="course_mian">
+              <block wx:for="{{courses}}" wx:for-item="course" wx:key="id">
+                <view class="course_name2">
+                  <view class="course_title">{{course.name}}</view>
+                  <view class="course_name1 tb"><span>{{course.gradeClassName}}</span></view>
+                  <view class="course_name1 tb"><span>{{course.courseNumber}}</span></view>
+                  <view class="course_name1 tb"><span>{{course.courseCount}}</span></view>
+                  <view class="course_name1 tb"><span>{{course.courseNumber-course.courseCount}}</span></view>
+                </view>
+              </block>
+            </view>
+          </view>
+        </view>
+
+      </view>
+
+    </view>
+  </view>
+</view>
+<!-- 标签栏 -->
+<view class="home-nav">
+  <view class="home-nav-item" bindtap="Dashboar">
+    <image class="icon" src="../../share/image/bar/shouye.png"></image>
+    <span class="text">首页</span>
+  </view>
+  <view class="home-nav-item" bindtap="ElectiveCourses">
+    <image class="icon" src="../../share/image/bar/yuyue.png"></image>
+    <span class="text">选课预约</span>
+  </view>
+  <view class="home-nav-item" bindtap="MyCourse">
+    <image class="icon" src="../../share/image/bar/kecheng.png"></image>
+    <span class="text">我的课程</span>
+  </view>
+  <view class="home-nav-item active" bindtap="PersonalInfo">
+    <image class="icon" src="../../share/image/bar/wode-v.png"></image>
+    <span class="text">个人信息</span>
+  </view>
+</view>

@@ -1,0 +1,61 @@
+<style lang="less">
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+.weui-msg {
+  padding-top: 72rpx;
+  text-align: center;
+}
+.weui-msg__icon-area {
+  margin-bottom: 60rpx;
+}
+icon {
+  vertical-align: middle;
+}
+.weui-msg__text-area {
+  margin-bottom: 50rpx;
+  padding: 0 40rpx;
+}
+.weui-msg__title {
+  margin-bottom: 5px;
+  font-weight: 400;
+  font-size: 40rpx;
+}
+.weui-msg__desc {
+  font-size: 28rpx;
+  color: #999999;
+}
+.weui-msg__link {
+  display: inline;
+  color: #586c94;
+}
+
+.weui-msg__opr-area {
+  margin-bottom: 50rpx;
+}
+.weui-btn-area {
+  margin: 40rpx 30rpx 18rpx;
+}
+
+.weui-btn:first-child {
+  margin-top: 0;
+}
+</style>
+<template src="./msg.html">
+
+</template>
+
+<script src="./msg.ts" lang="typescript">
+</script>

@@ -1,0 +1,37 @@
+<view class="home-group">
+  <view class="weui-tab">
+    <view class="weui-navbar">
+      <view wx:for="{{tabs}}" wx:key="*this" id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}"
+        @tap="tabClick">
+        <view class="weui-navbar__title">{{item}}</view>
+      </view>
+      <view wx:if="{{'2' == userType}}" class="weui-navbar__slider" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
+    </view>
+    <view class="weui-tab__panel">
+      <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
+        <block wx:for="{{teacherNotices}}" wx:for-item="tnotices" wx:key="id">
+          <view class="weui-cell weui-cell_access ntice-lest" hover-class="weui-cell_active" data-notice="{{tnotices}}"
+            bindtap="noticeUrl">
+            <view class="weui-cell__bd" data-notice="{{tnotices}}">{{tnotices.noticeTitle}}</view>
+            <view class="weui-cell__ft">
+              {{tnotices.noticeDateStr}}
+            </view>
+          </view>
+        </block>
+      </view>
+
+      <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
+        <block wx:for="{{schoolNotices}}" wx:for-item="notices" wx:key="id">
+          <view class="weui-cell weui-cell_access ntice-lest" hover-class="weui-cell_active" data-notice="{{notices}}"
+            bindtap="noticeUrl">
+            <view class="weui-cell__bd" data-notice="{{notices}}">{{notices.noticeTitle}}</view>
+            <view class="weui-cell__ft" data-notice="{{notices}}">
+              {{notices.noticeDateStr}}
+            </view>
+          </view>
+        </block>
+
+      </view>
+    </view>
+  </view>
+</view>

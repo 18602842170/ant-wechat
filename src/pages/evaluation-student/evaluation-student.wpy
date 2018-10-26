@@ -1,0 +1,146 @@
+<style lang="less">
+.home-group {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
+  overflow-y: auto;
+  // background-color:#eef1f6
+}
+// 时间
+.canlendarTopView {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20rpx 0;
+  width: 100%;
+  background-color: #fff;
+  font-size: 28rpx;
+  line-height: 28rpx;
+  .leftBgView {
+    .leftView {
+      padding: 12rpx 28rpx;
+      border-radius: 28rpx;
+      border: 2rpx solid #9cf;
+    }
+  }
+  .centerView {
+    margin: 0 28rpx;
+    padding: 12rpx 28rpx;
+    border-radius: 28rpx;
+    border: 1px solid #9cf;
+  }
+  .rightBgView {
+    .rightView {
+      padding: 12rpx 28rpx;
+      border-radius: 28rpx;
+      border: 2rpx solid #9cf;
+    }
+  }
+}
+// 内容
+.evaluate-bd {
+  font-size: 26rpx;
+  padding: 0 0 40rpx 0;
+  border-top: 20rpx solid #eef1f6;
+  overflow: hidden;
+}
+.evaluate-lest {
+  position: relative;
+  padding: 20rpx 30rpx 0;
+  // margin-bottom:20px;
+  &::before {
+    display: inline-block;
+    width: 100%;
+    height: 2rpx;
+    background: #cecece;
+    position: absolute;
+    left: 30rpx;
+    // left: 0;
+    bottom: 0;
+    content: '';
+  }
+  &:after {
+    display: inline-block;
+    position: absolute;
+    right: 30rpx;
+    top: 50%;
+    margin-right: -8rpx;
+    content: '';
+    width: 16rpx;
+    height: 16rpx;
+    border: solid #dddddd;
+    border-width: 2rpx 2rpx 0 0;
+    transform: translate(0, -50%) rotate(45deg);
+  }
+  .evaluate-h1 {
+    font-size: 34rpx;
+    font-weight: 120rpx;
+    line-height: 36rpx;
+    padding: 20rpx 0rpx 16rpx;
+  }
+  .evaluate-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 20rpx;
+    position: relative;
+    .evaluate-info-left {
+      .tm-icon {
+        width: 24rpx;
+        height: 24rpx;
+        // background:#999;
+        margin-right: 12rpx;
+      }
+      .evaluate-info-time {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+      }
+      .evaluate-info-name {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+      }
+    }
+    .evaluate-info-right {
+      position: relative;
+      padding-right: 20rpx;
+    }
+    .evaluate-info-top {
+      padding: 0 0 8rpx 0;
+    }
+  }
+}
+.fxed {
+  display: flex;
+  align-items: center;
+}
+.warp {
+  // overflow:hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.green {
+  color: #4df34d;
+}
+.evaluation {
+  padding: 30rpx;
+  .evaluation-h {
+    font-size: 32rpx;
+  }
+  .evaluation-time {
+    font-size: 28rpx;
+    padding: 10rpx 0 0 0;
+    color: #999;
+  }
+}
+</style>
+<template src="./evaluation-student.html">
+
+</template>
+
+<script src="./evaluation-student.ts" lang="typescript">
+</script>

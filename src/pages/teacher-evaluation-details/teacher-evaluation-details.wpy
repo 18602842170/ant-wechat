@@ -1,0 +1,172 @@
+<style lang="less">
+.home-group {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
+  overflow-y: auto;
+  background-color: #eef1f6;
+}
+// 内容
+.evaluate-bd {
+  font-size: 26rpx;
+  overflow: hidden;
+}
+.evaluate-lest1 {
+  position: relative;
+  background-color: #fff;
+  .evaluate-info1 {
+    padding: 20rpx 30rpx;
+    position: relative;
+    .evaluate-info-left1 {
+      .tm-icon {
+        width: 24rpx;
+        height: 24rpx;
+        // background:#999;
+        margin-right: 12rpx;
+      }
+      .evaluate-info-time {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+      }
+      .evaluate-info-name {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+      }
+    }
+    .evaluate-info-right {
+      position: relative;
+      padding-right: 20rpx;
+    }
+    .evaluate-info-top {
+      padding: 0 0 8rpx 0;
+    }
+  }
+}
+
+.evaluate-h1 {
+  font-size: 32rpx;
+  line-height: 32rpx;
+  padding: 30rpx;
+  position: relative;
+  color: #333;
+  &::before {
+    display: inline-block;
+    width: 100%;
+    height: 2rpx;
+    background: #dddddd;
+    position: absolute;
+    left: 0rpx;
+    // left: 0;
+    bottom: 0;
+    content: '';
+  }
+}
+.warp {
+  // overflow:hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+// timetable-bady
+.timetable-bady {
+  background-color: #fff;
+  .timetable-lest {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 28rpx;
+    margin-bottom: 20rpx;
+    .tm-icon {
+      width: 24rpx;
+      height: 24rpx;
+      // background:#999;
+      margin-right: 12rpx;
+    }
+    .tm-name {
+      color: #888;
+    }
+    .tm-text {
+      font-size: 30rpx;
+      color: #333;
+    }
+  }
+}
+.evaluate-lest {
+  margin: 30rpx 20rpx;
+  overflow: hidden;
+  // padding: 20rpx;
+  background: #fff;
+  .evaluate-h1 {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    // padding: 20rpx;
+    // font-size:28rpx;
+    .tm-icon {
+      width: 24rpx;
+      height: 24rpx;
+      //   background: #999;
+      margin-right: 12rpx;
+    }
+  }
+  .evaluate-lest-bd {
+    padding: 30rpx;
+    box-sizing: border-box;
+    .weui-cells__title {
+      font-size: 28rpx;
+      padding: 20rpx 0;
+    }
+    .weui-input {
+      border: 1px solid #dddddd;
+      padding: 24rpx 16rpx;
+      background: #f9f9f9;
+      border-radius: 6rpx;
+      margin: 0;
+      overflow: hidden;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    .weui-textarea {
+      min-height: 200rpx;
+      border: 2rpx solid #dddddd;
+      padding: 24rpx 16rpx;
+      background: #f9f9f9;
+      border-radius: 4rpx;
+      margin: 0;
+      overflow: hidden;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    .weui-textarea-up {
+      overflow: hidden;
+      width: 100%;
+      box-sizing: border-box;
+      font-size: 30rpx;
+      letter-spacing: 2rpx;
+      text-align: justify;
+      line-height: 36rpx;
+    }
+  }
+}
+
+.timetable-bady-button {
+  margin: 30rpx 0 0;
+  border-radius: 8rpx;
+  height: 80rpx;
+  font-size: 36rpx;
+  line-height: 80rpx;
+  text-align: center;
+  color: #fff;
+  background: #23b8ff;
+}
+</style>
+<template src="./teacher-evaluation-details.html">
+
+</template>
+
+<script src="./teacher-evaluation-details.ts" lang="typescript">
+</script>

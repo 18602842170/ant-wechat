@@ -1,0 +1,70 @@
+<view class="weui-tab">
+  <view class="weui-tab__panel">
+
+
+    <!-- 账号登陆 -->
+    <view wx:if="{{flg === '1'}}">
+      <view class="weui-tab__content">
+        <view class="title">
+          账号登录
+        </view>
+        <view class="form">
+          <view class="form-item">
+            <view class="form-item-bd">
+              <image class="icon home-icon" src="../../share/image/login/yonghu.png"></image>
+              <input type="text" bindblur="userNameInput" placeholder="用户名" />
+            </view>
+          </view>
+          <view class="form-item">
+            <view class="form-item-bd">
+              <image class="icon home-icon" src="../../share/image/login/mima.png"></image>
+              <input type="password" bindinput="passWordInput" placeholder="密码" />
+            </view>
+          </view>
+          <button class="form-btn active" open-type="getUserInfo" bindgetuserinfo="loginByAccount">
+            登录
+          </button>
+        </view>
+        <view class="form-line">
+          其他登录方式
+        </view>
+        <button class="form-btn btn-other tab-btn" bindtap="clickVerify">
+          验证码登录
+        </button>
+      </view>
+    </view>
+
+    <!-- 验证码登录 -->
+    <view wx:if="{{flg == '2'}}">
+      <view class="weui-tab__content">
+        <view class="title">
+          验证码登录
+        </view>
+        <view class="form">
+          <view class="form-item">
+            <view class="form-item-bd">
+              <image class="icon home-icon" src="../../share/image/login/yonghu.png"></image>
+              <input type="text" bindblur="userNameInput" placeholder="用户名" />
+            </view>
+          </view>
+          <view class="form-item">
+            <view class="form-item-bd">
+              <image class="icon home-icon" src="../../share/image/login/mima.png"></image>
+              <input type="text" bindinput="verifyInput" placeholder="验证码" />
+            </view>
+          </view>
+          <button class="form-btn active" bindtap="loginByVerify">
+            登录
+          </button>
+        </view>
+        <view class="form-line">
+          其他登录方式
+        </view>
+        <button class="form-btn btn-other tab-btn" bindtap="clickAccount">
+          账号登录
+        </button>
+      </view>
+    </view>
+
+  </view>
+</view>

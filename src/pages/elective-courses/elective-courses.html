@@ -1,0 +1,80 @@
+<view class="group">
+
+  <view class="nav">
+    <view class="dropdown">
+      <picker @change="gradeChange" value="{{gradeSelect}}" range="{{grades}}" range-key="tpName">
+        <view class="picker dropdown__description">{{grades[gradeSelect].tpName}}</view>
+      </picker>
+    </view>
+    <view class="dropdown">
+      <picker @change="subjectChange" value="{{subjectsSelect}}" range="{{subjects}}" range-key="tpName">
+        <view class="picker dropdown__description">{{subjects[subjectsSelect].tpName}}</view>
+      </picker>
+    </view>
+    <view class="dropdown1">
+      <button class="dropdown__description1" @tap="search">查询</button>
+    </view>
+  </view>
+
+  <view class="list-wrapper">
+
+    <!-- ul -->
+    <view class="course-list list-view" style="min-height: 1086rpx;">
+      <!-- 列表 -->
+      <block wx:for="{{courses}}" wx:for-item="course" wx:key="id">
+        <view class="list-view__item border-bottom">
+          <!-- a -->
+          <view class="course" bindtap="CourseDetails">
+            <view class="course__cover-wrap">
+              <view class="course__cover">
+                <image class="image" data-course="{{course}}" src="{{course.backImageUrl}}"></image>
+              </view>
+            </view>
+            <view class="course__content" data-course="{{course}}">
+              <view class="course__name" data-course="{{course}}">{{course.name}}</view>
+              <view class="course__t-list">
+                <view class="course__t-list-item" data-course="{{courses}}">{{course.courseDetailCount}}课时</view>
+              </view>
+              <view class="course__info">
+                <span class="course__info-item u-price z-free" data-course="{{courses}}">¥{{course.price}}.00</span>
+                <span class="course__cover-tips course__cover-tips--status" data-course="{{courses}}">预约人数：{{course.courseReserveCount}}人</span>
+              </view>
+            </view>
+          </view>
+        </view>
+      </block>
+
+      <!-- 数据为空时 -->
+      <!-- <view class="full-screen-tip full-screen-tip--empty">
+                <view class="full-screen-tip--icon">
+                    <image src="../../share/image/result-empty.png"></image>
+                    <view class="text">暂无相关课程</view>
+                </view>
+            </view> -->
+
+
+    </view>
+  </view>
+
+</view>
+
+
+<!-- 标签栏 -->
+<view class="home-nav">
+  <view class="home-nav-item" bindtap="Dashboar">
+    <image class="icon" src="../../share/image/bar/shouye.png"></image>
+    <span class="text">首页</span>
+  </view>
+  <view class="home-nav-item active">
+    <image class="icon" src="../../share/image/bar/yuyue-v.png"></image>
+    <span class="text">选课预约</span>
+  </view>
+  <view class="home-nav-item" bindtap="MyCourse">
+    <image class="icon" src="../../share/image/bar/kecheng.png"></image>
+    <span class="text">我的课程</span>
+  </view>
+  <view class="home-nav-item" bindtap="PersonalInfo">
+    <image class="icon" src="../../share/image/bar/wode.png"></image>
+    <span class="text">个人信息</span>
+  </view>
+</view>
